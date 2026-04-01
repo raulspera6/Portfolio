@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+			<title>Meu portifólio</title>
+	</head>
+	<body>
+			<!---cabeçalho/menu-->
+			<nav>
+				<span>Raul Spera.</span>
+				<ul>
+					<li><a href="#sobre">Sobre</a></li>
+						<li><a href="#Projetos">Projetos</a></li>
+							<li><a href="#Contato">Contato</a></li>
+				</ul>
+			</nav>
+			<!---seção principal--->
+			<section id="hero">
+					<h1>Olá, eu sou <span id="nome">RaulSpera</span></h1>
+					<p>Desenvolvedor Web Front-End</p>
+					<div class="hero-botoes"><a href="#Projetos" class="btn-primary" id="btn1">Ver Projetos</a>
+						<a href="#Contato" class="btn-outline" id="btn2">Entrar em Contato</a>
+					</div>
+				
+			</section>
+				<!---seção sobre--->
+				<section id="sobre">
+					<p class="label">// sobre mim</p>
+					<h2 class="revelar">Quem sou eu?</h2>
+					<p class="texto revelar">Sou um desenvolvedor web apaixonado por criar interfaces modernas. comecei minha jornada aprendendo HTML e CSS, e agora estou mergulhando no JavaScript.</p>
+
+				</section>
+					<!-- Seção Projetos -->
+<section id="projetos">
+  <p class="label">// Projetos</p>
+  <h2 class="revelar">O que já construí</h2>
+
+  <div class="projetos-grid">
+
+    <div class="projeto-card revelar">
+      <div class="projeto-icone">⚡</div>
+      <h3>Portfólio Pessoal</h3>
+      <p>Este site que você está construindo agora!</p>
+      <div class="projeto-tags">
+        <span>HTML</span><span>CSS</span><span>JS</span>
+      </div>
+    </div>
+
+    <div class="projeto-card revelar">
+      <div class="projeto-icone">🌦️</div>
+      <h3>App de Clima</h3>
+      <p>Aplicação que mostra a previsão do tempo por cidade.</p>
+      <div class="projeto-tags">
+        <span>JavaScript</span><span>API</span>
+      </div>
+    </div>
+
+    <div class="projeto-card revelar">
+      <div class="projeto-icone">✅</div>
+      <h3>Lista de Tarefas</h3>
+      <p>To-do list com armazenamento local.</p>
+      <div class="projeto-tags">
+        <span>HTML</span><span>CSS</span><span>JS</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+				<!-- Seção Habilidades -->
+<section id="habilidades">
+  <p class="label">// Habilidades</p>
+  <h2 class="revelar">Tecnologias que uso</h2>
+
+  <div class="skills-grid">
+
+    <div class="skill-card revelar">
+      <span>🌐</span>
+      <p>HTML5</p>
+      <small>Avançado</small>
+    </div>
+
+    <div class="skill-card revelar">
+      <span>🎨</span>
+      <p>CSS3</p>
+      <small>Avançado</small>
+    </div>
+
+    <div class="skill-card revelar">
+      <span>⚡</span>
+      <p>JavaScript</p>
+      <small>Intermediário</small>
+    </div>
+
+    <div class="skill-card revelar">
+      <span>🐙</span>
+      <p>Git</p>
+      <small>Básico</small>
+    </div>
+
+    <div class="skill-card revelar">
+      <span>📱</span>
+      <p>Responsivo</p>
+      <small>Avançado</small>
+    </div>
+
+    <div class="skill-card revelar">
+      <span>🎭</span>
+      <p>Figma</p>
+      <small>Básico</small>
+    </div>
+
+  </div>
+</section>
+<a href="mailto:seuemail@email.com" class="contato-email">raul.silva.bh@email.com</a>
+
+  <div class="sociais">
+    <a href="#" class="social-link">GitHub</a>
+    <a href="#" class="social-link">LinkedIn</a>
+    <a href="#" class="social-link">Instagram</a>
+  </div>
+</section>
+
+<!-- Rodapé -->
+<footer>
+  © 2026 Raul Spera
+</footer>
+				<script>
+  // Pegamos o elemento pelo id
+  const elemento = document.getElementById('nome');
+
+  // O texto que queremos digitar
+  const texto = 'Raul Spera';
+
+  // Começamos com o texto vazio
+  elemento.innerText = '';
+
+  // Variável que controla qual letra estamos
+  let i = 0;
+
+  // Função que digita uma letra por vez
+  function digitar() {
+    if (i < texto.length) {
+      elemento.innerText += texto[i];
+      i++;
+      setTimeout(digitar, 100);
+    }
+  }
+
+  // Inicia o efeito
+  digitar();
+  // Pegamos os botões pelos ids
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2');
+
+// Efeito no botão principal
+btn1.addEventListener('mouseover', function() {
+  btn1.style.transform = 'translateY(-4px)';
+  btn1.style.transition = 'transform 0.2s';
+});
+
+btn1.addEventListener('mouseout', function() {
+  btn1.style.transform = 'translateY(0)';
+});
+
+// Efeito no botão outline
+btn2.addEventListener('mouseover', function() {
+  btn2.style.borderColor = '#00e5a0';
+  btn2.style.color = '#00e5a0';
+  btn2.style.transform = 'translateY(-4px)';
+  btn2.style.transition = 'all 0.2s';
+});
+
+btn2.addEventListener('mouseout', function() {
+  btn2.style.borderColor = '#1e2730';
+  btn2.style.color = '#e8edf2';
+  btn2.style.transform = 'translateY(0)';
+});
+// Seleciona todos os elementos com classe "revelar"
+const elementos = document.querySelectorAll('.revelar');
+
+// Cria o observador
+const observador = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visivel');
+    }
+  });
+}, { threshold: 0.15 });
+
+// Observa cada elemento
+elementos.forEach(function(el) {
+  observador.observe(el);
+});
+</script>
+	</body>
+</html>
