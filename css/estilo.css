@@ -341,6 +341,53 @@ footer {
   margin-bottom: 1rem;
 }
 
+.contato-box {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.contato-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #0e1318;
+  border: 1px solid #1e2730;
+  border-radius: 4px;
+  padding: 1.5rem 2rem;
+  transition: border-color 0.2s;
+}
+
+.contato-info:hover {
+  border-color: #00e5a0;
+}
+
+.contato-info span {
+  font-size: 1.8rem;
+}
+
+.contato-info small {
+  display: block;
+  color: #00e5a0;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.contato-info a,
+.contato-info p {
+  color: #e8edf2;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.contato-info a:hover {
+  color: #00e5a0;
+}
+
 .contato-email {
   display: inline-block;
   font-size: 1.8rem;
@@ -391,4 +438,145 @@ footer {
 .revelar.visivel{
   opacity: 1;
 transform: translateY(0px);
+}
+#canvas{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+nav,section,footer{
+  position: relative;
+  z-index: 1;
+}
+/* ===== RESPONSIVO - CELULAR ===== */
+@media (max-width: 768px) {
+
+  nav {
+    padding: 1rem 1.5rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  #hero {
+    padding: 8rem 1.5rem 4rem;
+  }
+
+  #hero h1 {
+    font-size: 2.2rem;
+  }
+
+  #sobre,
+  #projetos,
+  #habilidades,
+  #contato {
+    padding: 4rem 1.5rem;
+  }
+
+  .projetos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contato-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contato-info {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .hero-botoes {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    text-align: center;
+  }
+}
+#feedbacks {
+  padding: 6rem 4rem;
+  border-top: 1px solid #1e2730;
+}
+
+#feedbacks h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.feedbacks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.feedback-card {
+  background: #0e1318;
+  border: 1px solid #1e2730;
+  border-radius: 4px;
+  padding: 2rem;
+  transition: border-color 0.2s;
+}
+
+.feedback-card:hover {
+  border-color: #00e5a0;
+}
+
+.feedback-texto {
+  color: #a0b0c0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.feedback-autor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feedback-avatar {
+  width: 44px;
+  height: 44px;
+  background: #1e2730;
+  border: 1px solid #00e5a0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #00e5a0;
+  font-weight: bold;
+}
+
+.feedback-autor strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #e8edf2;
+}
+
+.feedback-autor span {
+  font-size: 0.75rem;
+  color: #6b7c8d;
+}
+
+/* Responsivo feedbacks */
+@media (max-width: 768px) {
+  .feedbacks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #feedbacks {
+    padding: 4rem 1.5rem;
+  }
 }

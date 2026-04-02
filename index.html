@@ -7,6 +7,7 @@
 			<title>Meu portifólio</title>
 	</head>
 	<body>
+      <canvas id="canvas"></canvas>
 			<!---cabeçalho/menu-->
 			<nav>
 				<span>Raul Spera.</span>
@@ -113,12 +114,80 @@
 
   </div>
 </section>
-<a href="mailto:seuemail@email.com" class="contato-email">raul.silva.bh@email.com</a>
+<!-- Seção Feedbacks -->
+<section id="feedbacks">
+  <p class="label revelar">// feedbacks</p>
+  <h2 class="revelar">O que dizem sobre mim</h2>
 
-  <div class="sociais">
+  <div class="feedbacks-grid">
+
+    <div class="feedback-card revelar">
+      <p class="feedback-texto">"Raul entregou o projeto no prazo e com uma qualidade incrível. Interface limpa e muito bem feita!"</p>
+      <div class="feedback-autor">
+        <div class="feedback-avatar">JS</div>
+        <div>
+          <strong>João Silva</strong>
+          <span>Designer UI/UX</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-card revelar">
+      <p class="feedback-texto">"Profissional dedicado e criativo. Resolveu problemas complexos com soluções simples e elegantes."</p>
+      <div class="feedback-autor">
+        <div class="feedback-avatar">MC</div>
+        <div>
+          <strong>Maria Costa</strong>
+          <span>Product Manager</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-card revelar">
+      <p class="feedback-texto">"Aprendizado rápido e muita vontade de fazer bem feito. Recomendo sem hesitar!"</p>
+      <div class="feedback-autor">
+        <div class="feedback-avatar">PT</div>
+        <div>
+          <strong>Pedro Torres</strong>
+          <span>Dev Full Stack</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="contato">
+  <p class="label revelar">// contato</p>
+  <h2 class="revelar">Vamos trabalhar juntos?</h2>
+  <p class="texto revelar">Estou aberto a novas oportunidades e projetos. Me manda uma mensagem!</p>
+
+  <div class="contato-box revelar">
+    <div class="contato-info">
+      <span>📧</span>
+      <div>
+        <small>E-mail</small>
+        <a href="mailto:raul.silva.bh@email.com">raul.silva.bh@email.com</a>
+      </div>
+    </div>
+    <div class="contato-info">
+      <span>📍</span>
+      <div>
+        <small>Localização</small>
+        <p>São Paulo, Brasil</p>
+      </div>
+    </div>
+    <div class="contato-info">
+      <span>💼</span>
+      <div>
+        <small>Disponibilidade</small>
+        <p>Aberto a oportunidades</p>
+      </div>
+    </div>
+  </div>
+  <div class="sociais revelar">
     <a href="#" class="social-link">GitHub</a>
     <a href="#" class="social-link">LinkedIn</a>
-    <a href="#" class="social-link">Instagram</a>
+
   </div>
 </section>
 
@@ -127,6 +196,63 @@
   © 2026 Raul Spera
 </footer>
 				<script>
+          //canvas de particulas
+          const canvas = document.getElementById('canvas');
+          const ctx = canvas.getContext('2d');
+
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight
+
+          //redimensiona com a janela
+          window.addEventListener('resize', function(){
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+          });
+
+          //criar 80 particulas
+          const particulas = [];
+          for (let i = 0; i < 80; i++) {
+            particulas.push({
+              x: Math.random() * canvas.width,
+              y:Math.random() * canvas.height,
+              tamanho: Math.random() * 2,
+              velX: (Math.random() - 0.5) * 0.5,
+              velY: (Math.random() - 0.5) * 0.5,
+              opacidade: Math.random() * 0.5 + 0.1
+
+            });
+
+            // Anima as partículas
+function animarCanvas() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particulas.forEach(function(p) {
+    // Desenha o ponto
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.tamanho, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(0, 229, 160, ' + p.opacidade + ')';
+    ctx.fill();
+
+    // Move o ponto
+    p.x += p.velX;
+    p.y += p.velY;
+
+    // Se sair da tela, volta pelo outro lado
+    if (p.x < 0) p.x = canvas.width;
+    if (p.x > canvas.width) p.x = 0;
+    if (p.y < 0) p.y = canvas.height;
+    if (p.y > canvas.height) p.y = 0;
+  });
+
+  requestAnimationFrame(animarCanvas);
+}
+
+animarCanvas();
+
+
+          }
+
+
   // Pegamos o elemento pelo id
   const elemento = document.getElementById('nome');
 
