@@ -10,13 +10,17 @@
       <canvas id="canvas"></canvas>
 			<!---cabeçalho/menu-->
 			<nav>
-				<span>Raul Spera.</span>
-				<ul>
-					<li><a href="#sobre">Sobre</a></li>
-						<li><a href="#Projetos">Projetos</a></li>
-							<li><a href="#Contato">Contato</a></li>
-				</ul>
-			</nav>
+        <span>Raul Spera.</span>
+        <div class="nav-direita">
+          <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#Projetos">Projetos</a></li>
+            <li><a href="#Contato">Contato</a></li>
+          </ul>
+          <button id="btn-tema" onclick="alternarTema()">CLARO</button>
+        </div>
+      </nav>
+      
 			<!---seção principal--->
 			<section id="hero">
 					<h1>Olá, eu sou <span id="nome">RaulSpera</span></h1>
@@ -319,6 +323,30 @@ const observador = new IntersectionObserver(function(entries) {
 elementos.forEach(function(el) {
   observador.observe(el);
 });
+// Modo claro/escuro
+function alternarTema() {
+  const body = document.body;
+  const btn = document.getElementById('btn-tema');
+
+  // Alterna a classe "claro" no body
+  body.classList.toggle('claro');
+
+  // Muda o ícone do botão
+  if (body.classList.contains('claro')) {
+    btn.innerText = 'ESCURO';
+    localStorage.setItem('tema', 'claro');
+  } else {
+    btn.innerText = 'CLARO';
+    localStorage.setItem('tema', 'escuro');
+  }
+}
+
+// Carrega preferência salva
+const temaSalvo = localStorage.getItem('tema');
+if (temaSalvo === 'claro') {
+  document.body.classList.add('claro');
+  document.getElementById('btn-tema').innerText = 'ESCURO';
+}
 </script>
 	</body>
 </html>

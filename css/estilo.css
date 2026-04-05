@@ -26,6 +26,7 @@
     align-items: center;
     padding: 1.5rem 4rem;
     border-bottom: 1px solid #1e2730;
+    background-color: #080c10;
   }
 
   nav span {
@@ -579,4 +580,60 @@ nav,section,footer{
   #feedbacks {
     padding: 4rem 1.5rem;
   }
+}
+#btn-tema{
+  background: transparent;
+  border: 1px solid #1e2730;
+  color: #e8edf2;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+#btn-tema:houver {
+  border-color: #00e5a0;
+}
+/* Tema claro*/
+body.claro{
+  background-color: #f0f4f8;
+  color: #0a0f14;
+}
+body.claro nav{
+  background-color: #ffffff;
+  border-bottom: 1px solid #dde3ea;
+}
+body.claro .projeto-card,
+body.claro .skill-card,
+body.claro .feedback-card,
+body.claro .contato-info {
+  background: #ffffff;
+  border-color: #dde3ea;
+}
+body.claro .projeto-card p,
+body.claro .skill-card p,
+body.claro .feedback-texto p,
+body.claro .about-text,
+body.claro .texto{
+  color: #4a5568;
+}
+body.claro nav ul a{
+  color: #4a5568;
+}
+body.claro nav{
+  background-color:#f0f4f8 ;
+}
+body.claro .btn-outline{
+  border-color: #0a0f14;
+  color: #0a0f14;
+}
+body,claro .btn-outline:hover{
+  border-color: #00e5a0;
+  color: #00e5a0;
+}
+.nav-direita {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
