@@ -14,8 +14,8 @@
         <div class="nav-direita">
           <ul>
             <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#Projetos">Projetos</a></li>
-            <li><a href="#Contato">Contato</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
           </ul>
           <button id="btn-tema" onclick="alternarTema()">CLARO</button>
         </div>
@@ -25,8 +25,8 @@
 			<section id="hero">
 					<h1>Olá, eu sou <span id="nome">RaulSpera</span></h1>
 					<p>Desenvolvedor Web Front-End</p>
-					<div class="hero-botoes"><a href="#Projetos" class="btn-primary" id="btn1">Ver Projetos</a>
-						<a href="#Contato" class="btn-outline" id="btn2">Entrar em Contato</a>
+					<div class="hero-botoes"><a href="#projetos" class="btn-primary" id="btn1">Ver Projetos</a>
+						<a href="#contato" class="btn-outline" id="btn2">Entrar em Contato</a>
 					</div>
 				
 			</section>
@@ -213,18 +213,18 @@
             canvas.height = window.innerHeight;
           });
 
-          //criar 80 particulas
-          const particulas = [];
-          for (let i = 0; i < 80; i++) {
-            particulas.push({
-              x: Math.random() * canvas.width,
-              y:Math.random() * canvas.height,
-              tamanho: Math.random() * 2,
-              velX: (Math.random() - 0.5) * 0.5,
-              velY: (Math.random() - 0.5) * 0.5,
-              opacidade: Math.random() * 0.5 + 0.1
+          // Cria 40 partículas (era 80)
+const particulas = [];
+for (let i = 0; i < 40; i++) {
+  particulas.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    tamanho: Math.random() * 1,
+    velX: (Math.random() - 0.5) * 0.2,
+    velY: (Math.random() - 0.5) * 0.2,
+    opacidade: Math.random() * 0.2 + 0.05
+  });
 
-            });
 
             // Anima as partículas
 function animarCanvas() {

@@ -637,3 +637,20 @@ body,claro .btn-outline:hover{
   align-items: center;
   gap: 2rem;
 }
+/* Ajuste de fontes */
+.label {
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+}
+
+.feedback-texto {
+  font-size: 1rem;
+}
+
+.feedback-autor strong {
+  font-size: 1rem;
+}
+
+.feedback-autor span {
+  font-size: 0.85rem;
+}
