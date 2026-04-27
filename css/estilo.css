@@ -654,3 +654,22 @@ body,claro .btn-outline:hover{
 .feedback-autor span {
   font-size: 0.85rem;
 }
+.projeto-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #1e2730;
+}
+
+.projeto-link {
+  font-size: 0.75rem;
+  color: #00e5a0;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: letter-spacing 0.2s;
+}
+
+.projeto-link:hover {
+  letter-spacing: 0.15em;
+}
