@@ -94,6 +94,8 @@
 
 .btn-primary:hover {
   background: #00ffa8;
+}.btn-primary:hover {
+  background: #ff8c00;
 }
 
 .btn-outline:hover {
